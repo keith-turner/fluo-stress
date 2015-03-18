@@ -1,13 +1,8 @@
 #!/bin/bash
 
 BIN_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+. $BIN_DIR/load-env.sh
 
-if [ ! -f $BIN_DIR/../conf/env.sh ] 
-then
-  . $BIN_DIR/../conf/env.sh.example
-else
-  . $BIN_DIR/../conf/env.sh
-fi
 
 if [ "$#" -ne 3 ]; then
     echo "Usage : $0 <input dir> <work dir> <num reducers>"

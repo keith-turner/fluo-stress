@@ -104,7 +104,17 @@
 
     </plugins>
   </build>
-  
+ 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.accumulo</groupId>
+        <artifactId>accumulo-core</artifactId>
+        <version>${accumulo.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+ 
   <dependencies>
     <dependency>
       <groupId>io.fluo</groupId>

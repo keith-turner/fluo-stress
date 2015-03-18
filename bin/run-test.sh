@@ -1,21 +1,10 @@
 #!/bin/bash
 
 BIN_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-
-if [ ! -f $BIN_DIR/../conf/env.sh ]; 
-then
-  . $BIN_DIR/../conf/env.sh.example
-else
-  . $BIN_DIR/../conf/env.sh
-fi
-
-if [ ! -f "$STRESS_JAR" ]
-then
-  echo "File $STRESS_JAR not found" 
-  exit 1;
-fi
+. $BIN_DIR/load-env.sh
 
 mkdir -p $LOG_DIR
+rm $LOG_DIR/*
 
 hadoop fs -rm -r /stress/
 #add splits to Fluo table
