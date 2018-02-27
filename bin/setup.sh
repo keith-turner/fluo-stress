@@ -33,10 +33,6 @@ fluo.app.trie.nodeSize=8
 fluo.app.trie.stopLevel=$STOP
 EOF
 
-# Create config file used for connection
-cp $FLUO_HOME/conf/fluo-conn.properties ./conf/fluo-conn.properties
-echo "fluo.connection.application.name=$FLUO_APP_NAME" >> ./conf/fluo-conn.properties
-
 # Initialize Stresso
 fluo init -a $FLUO_APP_NAME -p conf/fluo-app.properties -f
 
